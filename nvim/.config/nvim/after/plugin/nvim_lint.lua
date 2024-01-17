@@ -10,7 +10,7 @@ lint.linters_by_ft = {
 
 -- Lints on enter buffer, write to buffer, leave insert
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	--pattern = '*.go', -- Limit running linter to files with names that match the pattern
 	group = lint_augroup,
 	callback = function()
